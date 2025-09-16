@@ -1,0 +1,139 @@
+/* reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+
+/* Importar tipografía (Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Estilo general de la página */
+body {
+  font-family: 'Poppins', sans-serif; /* Fuente principal */
+  background-color: #f3f3f3; /* Azul oscuro de la paleta */
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Header y navegación */
+header {
+  background-color: #011530; /* Azul más claro */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+header img{
+  height: auto;
+  width: 25%;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 10px;
+  color: #FFB703; /* Amarillo para resaltar */
+}
+
+header nav ul {
+  display: flex;
+  list-style: none; /* Quitar viñetas */
+  padding: 0;
+  margin: 2px 0px 0px 0px;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1em;
+  color: #F5F7FA; /* Blanco */
+  text-decoration: none;
+}
+
+
+/* Títulos */
+h2 {
+  color: #FFB703; /* Amarillo */
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Párrafos */
+p {
+  margin: 2px 0 0 0;
+  text-align: center;
+}
+
+/* Tablas generales */
+table {
+  width: 90%;
+  margin: 1rem auto;
+  border-collapse: collapse; /* Bordes limpios */
+  background-color: white; /* Fondo de tabla */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background-color: #F5F7FA; /* Fondo claro para encabezado */
+  color: #0A0F24; /* Texto oscuro */
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid white; /* Línea divisoria */
+}
+
+button {
+  width: 30%;
+  margin-top: 15px;
+  background-color: #FFB703;
+  color: #F5F7FA;
+  font-size: 20px;
+}
+
+a {
+  color: #FFB703; /* Blanco */
+  text-decoration: none;
+  font-weight: 500;  
+}
+
+/* Mail */
+
+main{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+main .imagen img{
+  width: 60%;
+  padding-top: 2%;
+}
+
+main .imagen{
+  display: flex;
+  justify-content: center;
+}
+
+
+/* Footer */
+footer {
+  background-color: #011530;
+  color: #F5F7FA;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+
+/* Estilos desktop */
+@media screen and (min-width:1024px) {
+ main{
+  grid-template-columns: repeat(2, 1fr)
+  
+ } 
+}
