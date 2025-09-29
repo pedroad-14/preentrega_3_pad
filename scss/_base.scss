@@ -1,0 +1,49 @@
+header {
+  background-color: $secondary-color;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    width: 25%;
+    height: auto;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+
+      li {
+        a {
+          color: $text-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  @extend %button-base;
+  background-color: $primary-color;
+  color: $text-color;
+}
+
+/* Animación ejemplo */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+button {
+  &:hover {
+    animation: bounce 0.5s;
+  }
+}
+
+body {
+  overflow-x: hidden; // Evita scroll horizontal en todas las páginas
+}
