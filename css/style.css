@@ -86,7 +86,7 @@ padding: 10px;
 td {
 padding: 10px;
 text-align: center;
-border-bottom: 1px solid #f3f3f3; /* ✅ Antes estaba en blanco, no se veía */
+border-bottom: 1px solid #f3f3f3; 
 }
 
 /* Botones */
@@ -97,14 +97,14 @@ margin-top: 15px;
 background-color: #FFB703;
 color: #F5F7FA;
 font-size: 20px;
-border: none; /* ✅ agregado */
-border-radius: 6px; /* ✅ agregado para consistencia */
+border: none; 
+border-radius: 6px; 
 cursor: pointer;
 }
 
 
 button:hover {
-opacity: 0.9; /* ✅ agregado efecto hover */
+opacity: 0.9; 
 }
 
 /* Main y layout */
@@ -114,7 +114,7 @@ display: grid;
 justify-content: center;
 align-items: center;
 grid-template-columns: 1fr;
-gap: 20px; /* ✅ agregado separación */
+gap: 20px; 
 }
 
 

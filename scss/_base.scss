@@ -44,6 +44,28 @@ button {
   }
 }
 
+/* Evita scroll horizontal en todas las páginas */
 body {
-  overflow-x: hidden; // Evita scroll horizontal en todas las páginas
+  overflow-x: hidden; 
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Estilo del botón */
+button {
+  background-color: $primary-color;
+  color: $text-color;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  /* Animación al pasar el mouse */
+  &:hover {
+    animation: bounce 0.5s; 
+  }
 }
