@@ -1,72 +1,82 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- Link de BT -->
-    <title>Mi Quiniela MX</title>
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi Quiniela MX</title>
+<!-- CSS principal -->
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    
-     <!-- Header con título -->
-  <header>
-    <img src="./img/header_1.jpg" alt="logo Mi quiniela MX">
-    <nav>
-      <!-- Menú de navegación -->
-      <ul>
-        <li><a href="./pages/posiciones.html">Posiciones</a></li>
-        <li><a href="./pages/resultados.html">Resultados</a></li>
-        <li><a href="#top_lideres">Top</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- Header con logo y navegación -->
+<header>
+<img src="./img/header_1.jpg" alt="Logo Mi Quiniela MX">
+<nav>
+<ul>
+<li><a href="./pages/posiciones.html">Posiciones</a></li>
+<li><a href="./pages/resultados.html">Resultados</a></li>
+<li><a href="#top_lideres">Top</a></li>
+</ul>
+</nav>
+</header>
 
-  <!-- Sección principal -->
-  <main> 
-      <!-- Aquí ira una tabla con selectores y no una imagen | Esta imagen es la que utilizo actualmente para compartir la quiniela por WA -->
-    <div class="imagen">  
-      <img src="./img/Quiniela_tabla (8).jpg" alt="logo cancha de futbol" style="width: 60%;">
-    </div>
-    <div class="textos">    
-      <h1>Jornada 5</h1>
-      <p>Tienes hasta el viernes 4:00 PM para enviar tu quiniela</p>
-      <button>Enviar</button>
-    </div>
-  </main>
 
-  <!-- Mini tabla de líderes -->
-  <section id="top_lideres">
-    <h2>Top Líderes</h2>
-    <table>
-        <tr>
-          <th>Posición</th>
-          <th>Jugador</th>
-          <th>Puntos</th>
-        </tr>
-        <tr>
-          <td>🥇 1</td>
-          <td>Adrian</td>
-          <td>6</td>
-        </tr>
-        <tr>
-          <td>🥈 2</td>
-          <td>Wandali</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>🥉 3</td>
-          <td>Marco</td>
-          <td>5</td>
-        </tr>
-    </table>
-    <a href="./pages/posiciones.html">Ver tabla completa</a>
-  </section>
+<!-- Sección principal -->
+<main>
+<div class="imagen">
+<!-- ✅ Limpieza: Se eliminó estilo inline y se pasó al CSS -->
+<img src="./img/Quiniela_tabla (8).jpg" alt="Tabla jornada actual">
+</div>
 
-  <!-- Footer -->
-  <footer>
-    <p>Proyecto Curso Desarrollo Web - Mi Quiniela MX 2025</p>
-  </footer>
+
+<div class="textos">
+<h1>Jornada 5</h1>
+<p>Tienes hasta el viernes 4:00 PM para enviar tu quiniela</p>
+<button>Enviar</button>
+</div>
+</main>
+
+
+<!-- Mini tabla de líderes -->
+<section id="top_lideres">
+<h2>Top Líderes</h2>
+<table>
+<thead>
+<!-- ✅ Limpieza: se agregó <thead> para semántica -->
+<tr>
+<th>Posición</th>
+<th>Jugador</th>
+<th>Puntos</th>
+</tr>
+</thead>
+<tbody>
+<!-- ✅ Limpieza: se organizó tabla en <tbody> -->
+<tr>
+<td>🥇 1</td>
+<td>Adrian</td>
+<td>6</td>
+</tr>
+<tr>
+<td>🥈 2</td>
+<td>Wandali</td>
+<td>5</td>
+</tr>
+<tr>
+<td>🥉 3</td>
+<td>Marco</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<a href="./pages/posiciones.html">Ver tabla completa</a>
+</section>
+
+
+<!-- Footer -->
+<footer>
+<p>Proyecto Curso Desarrollo Web - Mi Quiniela MX 2025</p>
+</footer>
+
 
 </body>
 </html>
