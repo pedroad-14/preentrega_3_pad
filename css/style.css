@@ -1,149 +1,18 @@
-/* reset */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Error: The target selector was not found.
+ * Use "@extend %button-base !optional" to avoid this error.
+ *    ,
+ * 69 |   @extend %button-base;
+ *    |   ^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   scss\_base.scss 69:3  root stylesheet */
 
-
-/* Importar tipografía (Poppins) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-/* Estilo general de la página */
-body {
-font-family: 'Poppins', sans-serif;
-background-color: #f3f3f3;
-line-height: 1.6;
-text-align: center;
-}
-
-h1 {
-font-size: 3rem;
-margin: 10px;
-color: #FFB703; /* Amarillo para resaltar */
-}
-
-
-h2 {
-color: #FFB703;
-margin-top: 15px;
-text-align: center;
-}
-
-
-p {
-margin: 2px 0 0 0;
-text-align: center;
-}
-
-a {
-color: #FFB703;
-text-decoration: none;
-font-weight: 500;
-}
-
-/* Header y navegación */
-header {
-background-color: #011530;
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0 5%;
-}
-
-
-header img {
-height: auto;
-width: 25%;
-}
-
-header nav ul {
-display: flex;
-list-style: none;
-margin: 2px 0 0 0;
-gap: 15px;
-font-size: 1em;
-}
-
-/* Tablas generales */
-table {
-width: 90%;
-margin: 1rem auto;
-border-collapse: collapse;
-background-color: white;
-border-radius: 8px;
-overflow: hidden;
-}
-
-
-th {
-background-color: #F5F7FA;
-color: #0A0F24;
-padding: 10px;
-}
-
-
-td {
-padding: 10px;
-text-align: center;
-border-bottom: 1px solid #f3f3f3; 
-}
-
-/* Botones */
-
-button {
-width: 30%;
-margin-top: 15px;
-background-color: #FFB703;
-color: #F5F7FA;
-font-size: 20px;
-border: none; 
-border-radius: 6px; 
-cursor: pointer;
-}
-
-
-button:hover {
-opacity: 0.9; 
-}
-
-/* Main y layout */
-
-main {
-display: grid;
-justify-content: center;
-align-items: center;
-grid-template-columns: 1fr;
-gap: 20px; 
-}
-
-
-main .imagen img {
-width: 60%;
-padding-top: 2%;
-}
-
-
-main .imagen {
-display: flex;
-justify-content: center;
-}
-
-
-/* Footer */
-footer {
-  background-color: #011530;
-  color: #F5F7FA;
-  text-align: center;
-  padding: 10px;
-  margin-top: 10px;
-}
-
-
-/* Estilos desktop */
-@media screen and (min-width:1024px) {
- main{
-  grid-template-columns: repeat(2, 1fr)
-  
- } 
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: The target selector was not found.\aUse "@extend %button-base !optional" to avoid this error.\a    \2577 \a 69 \2502    @extend %button-base;\d\a    \2502    ^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   scss\\_base.scss 69:3  root stylesheet';
 }
