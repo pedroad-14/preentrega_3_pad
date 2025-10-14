@@ -1,4 +1,11 @@
-/* --- HEADER --- */
+@use 'variables' as *; // permite usar las variables directamente
+
+body {
+  font-family: $font-family;
+  background-color: #f3f3f3;
+  overflow-x: hidden;
+}
+
 header {
   background-color: $secondary-color;
   padding: 0 5%;
@@ -11,67 +18,35 @@ header {
     height: auto;
   }
 
-  nav ul {
-    display: flex;
-    gap: 15px;
-    list-style: none;
+  nav {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 15px;
 
-    li a {
-      color: $text-color;
-      text-decoration: none;
+      li {
+        a {
+          color: $text-color;
+          text-decoration: none;
+        }
+      }
     }
   }
 }
 
-/* --- Menú responsive sin JS --- */
-.menu-toggle {
-  display: none;
-}
-
-.menu-icon {
-  display: none;
-  font-size: 2rem;
-  color: #FFB703;
-  cursor: pointer;
-}
-
-/* --- Vista mobile --- */
-@media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #011530;
-    padding: 10px 0;
-  }
-
-  /* Mostrar menú al activar checkbox */
-  .menu-toggle:checked + .menu-icon + nav ul {
-    display: flex;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-}
-
-/* --- BOTONES --- */
 .btn {
-  @extend %button-base;
-  background-color: $primary-color;
-  color: $text-color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  background-color: variables.$primary-color;
+  color: variables.$text-color;
 }
 
-/* --- ANIMACIÓN --- */
+/* Animación ejemplo */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -83,7 +58,3 @@ button {
   }
 }
 
-/* --- AJUSTE GLOBAL --- */
-body {
-  overflow-x: hidden; 
-}

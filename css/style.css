@@ -1,10 +1,10 @@
-/* Error: The target selector was not found.
- * Use "@extend %button-base !optional" to avoid this error.
+/* Error: There is no module with the namespace "variables".
  *    ,
- * 69 |   @extend %button-base;
- *    |   ^^^^^^^^^^^^^^^^^^^^
+ * 45 |   background-color: variables.$primary-color;
+ *    |                     ^^^^^^^^^^^^^^^^^^^^^^^^
  *    '
- *   scss\_base.scss 69:3  root stylesheet */
+ *   scss\_base.scss 45:21  @use
+ *   scss\style.scss 3:1    root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -14,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: 'Error: The target selector was not found.\aUse "@extend %button-base !optional" to avoid this error.\a    \2577 \a 69 \2502    @extend %button-base;\d\a    \2502    ^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   scss\\_base.scss 69:3  root stylesheet';
+  content: 'Error: There is no module with the namespace "variables".\a    \2577 \a 45 \2502    background-color: variables.$primary-color;\d\a    \2502                      ^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   scss\\_base.scss 45:21  @use\a   scss\\style.scss 3:1    root stylesheet';
 }
