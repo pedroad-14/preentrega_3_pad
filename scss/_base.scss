@@ -1,5 +1,12 @@
 @use 'variables' as *;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 /* --- Tipografía y base --- */
 body {
   font-family: $font-family;
@@ -37,6 +44,7 @@ header .logo { width: 25%; height: auto; }
 /* --- Header/Nav --- */
 header {
   background-color: $secondary-color;
+  width: 100%;
   padding: 0 5%;
   display: flex;
   justify-content: space-between;

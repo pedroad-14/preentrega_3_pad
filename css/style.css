@@ -1,4 +1,10 @@
 @charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* --- Tipografía y base --- */
 body {
   font-family: "Poppins", sans-serif;
@@ -42,6 +48,7 @@ header .logo {
 /* --- Header/Nav --- */
 header {
   background-color: #011530;
+  width: 100%;
   padding: 0 5%;
   display: flex;
   justify-content: space-between;
