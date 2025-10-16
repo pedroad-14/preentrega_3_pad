@@ -1,11 +1,40 @@
-@use 'variables' as *; // permite usar las variables directamente
+@use 'variables' as *;
 
+/* --- Tipografía y base --- */
 body {
   font-family: $font-family;
-  background-color: #f3f3f3;
+  background-color: $bg-color;
+  line-height: 1.6;
+  text-align: center;
   overflow-x: hidden;
 }
 
+h1 {
+  font-size: 3rem;
+  margin: 10px;
+  color: $primary-color;
+}
+
+h2 {
+  color: $primary-color;
+  margin-top: 15px;
+}
+
+p {
+  margin: 2px 0 0 0;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header .logo { width: 25%; height: auto; }
+@media (max-width: 768px) { header .logo { max-width: 160px; } }
+
+
+/* --- Header/Nav --- */
 header {
   background-color: $secondary-color;
   padding: 0 5%;
@@ -18,43 +47,178 @@ header {
     height: auto;
   }
 
-  nav {
-    ul {
-      display: flex;
-      list-style: none;
-      gap: 15px;
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
 
-      li {
-        a {
-          color: $text-color;
-          text-decoration: none;
-        }
-      }
+    li a {
+      color: $text-color;
+      text-decoration: none;
     }
   }
 }
 
-.btn {
+/* --- Menú responsive sin JS --- */
+.menu-toggle {
+  position: absolute;
+  left: -9999px;
+  appearance: none;
+}
+
+.menu-icon {
+  display: none; /* visible solo en mobile */
+  font-size: 2rem;
+  color: $text-color; /* contraste con header oscuro */
+  cursor: pointer;
+  margin-left: auto; /* empuja el icono hacia la derecha */
+  padding: 6px 10px;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* --- Main layout --- */
+main {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  .imagen {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 60%;
+      padding-top: 2%;
+    }
+  }
+}
+
+/* --- Tabla genérica (posiciones, resultados, top) --- */
+table {
+  width: 90%;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+
+  thead th {
+    background-color: #f5f7fa;
+    color: #0a0f24;
+    padding: 10px;
+  }
+
+  tbody td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid $muted-row;
+  }
+}
+
+/* --- Botones --- */
+.btn,
+button {
+  background-color: $primary-color;
+  color: $text-color;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  background-color: variables.$primary-color;
-  color: variables.$text-color;
+  font-size: 1.1rem;
+  transition: opacity 0.2s ease;
+}
+.btn:hover,
+button:hover {
+  opacity: 0.9;
 }
 
-/* Animación ejemplo */
+/* --- Footer --- */
+footer {
+  background-color: $secondary-color;
+  color: $text-color;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* --- Animación simple para botones --- */
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+button:hover {
+  animation: bounce 0.5s;
 }
 
-button {
-  &:hover {
-    animation: bounce 0.5s;
+/* --- Responsive (mobile primero; desktop a 1024px) --- */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  header img { order: 1; max-width: 160px; }
+
+  .menu-icon { display: block; order: 2; }
+
+  header nav { order: 3; width: 100%; }
+
+  /* Oculta nav en mobile */
+  header nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: $secondary-color;
+    padding: 10px 0;
+    margin-top: 10px;
+
+    li { margin: 10px 0; }
+
+    /* Enlaces cómodos de tocar */
+    a {
+      color: $text-color;
+      display: block;         /* ocupa todo el ancho del ítem */
+      padding: 8px 12px;
+    }
+  }
+
+  /* ✅ Mostrar menú cuando el checkbox está activo (robusto con ~) */
+  #menu-toggle:checked ~ nav ul {
+    display: flex;
+  }
+
+  /* ✅ Asegura que el menú quede por encima si se superpone */
+  #menu-toggle:checked ~ nav {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.menu-toggle { 
+  position:absolute; left:-9999px; appearance:none; 
+}
+
+
+@media (min-width: 1024px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
