@@ -70,7 +70,7 @@ header nav ul li a {
   text-decoration: none;
 }
 
-/* --- Menú responsive sin JS --- */
+/* Menú responsive */
 .menu-toggle {
   position: absolute;
   left: -9999px;
@@ -94,7 +94,7 @@ header nav ul li a {
   text-align: center;
 }
 
-/* --- Main layout --- */
+/* Main layout */
 main {
   display: grid;
   justify-content: center;
@@ -111,7 +111,7 @@ main .imagen img {
   padding-top: 2%;
 }
 
-/* --- Tabla genérica (posiciones, resultados, top) --- */
+/* Estilos de tabla */
 table {
   width: 90%;
   margin: 1rem auto;
@@ -131,7 +131,7 @@ table tbody td {
   border-bottom: 1px solid #f3f3f3;
 }
 
-/* --- Botones --- */
+/* Botones */
 .btn,
 button {
   background-color: #FFB703;
@@ -149,7 +149,7 @@ button:hover {
   opacity: 0.9;
 }
 
-/* --- Footer --- */
+/* Footer */
 footer {
   background-color: #011530;
   color: #F5F7FA;
@@ -158,7 +158,7 @@ footer {
   margin-top: 10px;
 }
 
-/* --- Animación simple para botones --- */
+/* Animación */
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -171,7 +171,7 @@ button:hover {
   animation: bounce 0.5s;
 }
 
-/* --- Responsive (mobile primero; desktop a 1024px) --- */
+/* Responsive (mobile a 768px; desktop a 1024px) */
 @media (max-width: 768px) {
   header {
     flex-wrap: wrap;
@@ -191,7 +191,7 @@ button:hover {
     order: 3;
     width: 100%;
   }
-  /* Oculta nav en mobile */
+  /* Nav en mobile */
   header nav ul {
     display: none;
     flex-direction: column;
@@ -203,19 +203,15 @@ button:hover {
   header nav ul li {
     margin: 10px 0;
   }
-  header nav ul {
-    /* Enlaces cómodos de tocar */
-  }
   header nav ul a {
     color: #F5F7FA;
-    display: block; /* ocupa todo el ancho del ítem */
+    display: block;
     padding: 8px 12px;
   }
-  /* ✅ Mostrar menú cuando el checkbox está activo (robusto con ~) */
+  /* menú + checkbox */
   #menu-toggle:checked ~ nav ul {
     display: flex;
   }
-  /* ✅ Asegura que el menú quede por encima si se superpone */
   #menu-toggle:checked ~ nav {
     position: relative;
     z-index: 3;
